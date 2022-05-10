@@ -1,0 +1,112 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	background: linear-gradient(to right,hsl(200,100%,50%),
+		hsl(175,100%,50%));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+.clock{
+	position: relative;
+	width: 300px;
+	height: 300px;
+	background-color: rgba(255,255,255,0.8);
+	border-radius: 50%;
+	border: 2px solid black;
+}
+.clock .number{
+	--rotation: 0;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	transform: rotate(var(--rotation));
+	font-size: 1.5rem;
+}
+.clock .number1{
+	--rotation: 30deg;
+}.clock .number1{
+	--rotation: 30deg;
+}
+.clock .number2{
+	--rotation: 60deg;
+}
+.clock .number3{
+	--rotation: 90deg;
+}
+.clock .number4{
+	--rotation: 120deg;
+}
+.clock .number5{
+	--rotation: 150deg;
+}
+.clock .number6{
+	--rotation: 180deg;
+}
+.clock .number7{
+	--rotation: 210deg;
+}
+.clock .number8{
+	--rotation: 240deg;
+}
+.clock .number9{
+	--rotation: 270deg;
+}
+.clock .number10{
+	--rotation: 300deg;
+}
+.clock .number11{
+	--rotation: 330deg;
+}
+.clock .number12{
+	--rotation: 360deg;
+}
+
+.clock .hand{
+	--rotation: 0;
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	width: 10px;
+	background-color: black;
+	transform-origin: bottom;
+	transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+	/* we use this translateX(-50%) for taking the hand in mid of 12pm on clock so when we
+	say negative fifty percent then width of hand will be half backward */
+	border: 1px solid white;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	z-index: 10;
+}
+.clock::after{
+	content: '';
+	position: absolute; /* for new element position will be absolute */
+	background-color: black;
+	z-index: 11;
+	width: 15px;
+	height: 15px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 50%;
+}
+.clock .hand.second{
+	width: 3px;
+	height: 44%;
+	background-color: red;
+}
+.clock .hand.minute{
+	width: 7px;
+	height: 40%;
+	background-color: black;
+}
+.clock .hand.hour{
+	width: 10px;
+	height: 35%;
+	background-color: black;
+}
